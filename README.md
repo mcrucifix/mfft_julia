@@ -39,3 +39,17 @@ For a stable, documented, and fully tested version in R, see:
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Sample code
+
+```{julia}
+using Statistics
+include("mfft.jl")
+
+V = 0.02 * randn(1024) + im* 0.0004 * randn(1024) .+ 
+             3.0.*(cis(0.142 * t) for t in (0:1023)) .+
+             (2.93 + 0.14im) .*(cis(0.192 * t) for t in (0:1023)) .+
+             (0.93 + 0.54im) .*(cis(0.242 * t) for t in (0:1023)) .+
+             (0.55 + 0.93im) .*(cis(0.441 * t) for t in (0:1023)) 
+
+Amp, freq = mfft(V)
+```
