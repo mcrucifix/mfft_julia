@@ -41,7 +41,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Sample code
 
-```{julia}
+```julia
 using Statistics
 include("mfft.jl")
 
